@@ -1,22 +1,18 @@
-import { suma } from "../components/FuncionesTest";
-import { filtrarNumeroMasAlto } from "../components/FuncionesTest";
-import { primerLetraMayuscula } from "../components/FuncionesTest";
-import { cualEsMayor } from "../components/FuncionesTest";
+import { suma, filtrarNumeroMasAlto, primerLetraMayuscula,cualEsMayor } from '../utilities/Funciones';
 
 describe("FuncionesTest", () => {
-    /* Funcion suma(numero1, numero2)  */
+    // Funcion suma(numero1, numero2)  
     test('Se espera que sume correctamente dos numeros = 4', () => { 
         let resp = suma( 2, 2 )
         expect( resp ).toBe( 4 )
         expect( typeof resp ).toBe( "number" )
     } )
-
-    test('Si la funcion recibe algun dato que no sea numerico como parametro devolver mensaje de datos no validos', () => { 
+    test('Si algun parametro no es un numero devolver mensaje de datos no validos', () => { 
         let resp = suma( 2, "hola" )
         expect(resp).toBe( "Error: datos no validos" )
     } )
 
-    /* Funcion filtrarNumeroMasAlto(arrayNumeros) */
+    // Funcion filtrarNumeroMasAlto(arrayNumeros)
     test('Devuelve el numero mas alto del array', () => { 
         let resp = filtrarNumeroMasAlto( [2,4,5,7,9] )
         expect(resp).toBe( 9 )
@@ -27,7 +23,7 @@ describe("FuncionesTest", () => {
         expect(resp).toBe( "Error: datos no validos" )
     } )
 
-    /* Funcion primerLetraMayuscula(string) */
+    // Funcion primerLetraMayuscula(string) 
     test('Solo puede recibir string', () => { 
         let resp = primerLetraMayuscula( "Hola Soy Manco" )
         expect(resp).toBe( "OK" )
@@ -37,7 +33,7 @@ describe("FuncionesTest", () => {
         expect(resp).toBe( "Error: datos no validos" )
     } )
 
-    /* Funcion cualEsMayor(numero1, numero2) */
+    // Funcion cualEsMayor(numero1, numero2) 
     test('Solo puede recibir numeros', () => { 
         let resp = cualEsMayor( 9, 13 )
         expect(resp).toBe( 13 )
@@ -47,4 +43,5 @@ describe("FuncionesTest", () => {
         expect(resp).toBe( "Error: datos no validos" )
     } )
 
-} )
+    }
+)

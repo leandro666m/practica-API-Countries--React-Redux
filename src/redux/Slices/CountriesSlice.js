@@ -13,11 +13,8 @@ export const CountriesSlice = createSlice({
       state.data = action.payload;
     },
     newCountry: (state, action) => {
-      console.log(action);
-     //state.data.push(action.payload);
      const { flags , name, maps, region, capital, population, timezones} = action.payload;
-     state.data.push(
-      {
+     state.data.push( {
       flags: { png: flags },
       name: {common: name } ,
       maps: { googleMaps: maps },
