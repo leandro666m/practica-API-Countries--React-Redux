@@ -24,6 +24,7 @@ function App() {
       <Routes>
         <Route path={"/"} element={<Home />}></Route>
         <Route path={"/form"} element={<FormSubmit />}></Route>
+        <Route path={"/edit/:id"} element={<FormSubmit />}></Route>
       </Routes>
     </>
   );

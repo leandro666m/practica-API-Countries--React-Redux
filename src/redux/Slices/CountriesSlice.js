@@ -13,20 +13,46 @@ export const CountriesSlice = createSlice({
       state.data = action.payload;
     },
     newCountry: (state, action) => {
-     const { flags , name, maps, region, capital, population, timezones} = action.payload;
-     state.data.push( {
-      flags: { png: flags },
-      name: {common: name } ,
-      maps: { googleMaps: maps },
-      region,
-      capital,
-      population,
-      timezones,    
-    });
-  },
+        const { flags , name, maps, region, capital, population, timezones} = action.payload;
+        state.data.push( {
+              flags: { png: flags },
+              name: {common: name } ,
+              maps: { googleMaps: maps },
+              region,
+              capital,
+              population,
+              timezones,    
+        } );
+    },
+
+    editCountry: (state, action) => {
+      const { flags , name, maps, region, capital, population, timezones} = action.payload;
+        console.log( { flags , name, maps, region, capital, population, timezones} );
+      const foundCountry = state.data.find( (coun) => coun.name.common === name);
+      
+      if (foundCountry) {
+        foundCountry.flags = flags;
+        foundCountry.name.common = name;
+        foundCountry.maps = maps;
+        foundCountry.region = region;
+        foundCountry.capital = capital;
+        foundCountry.population = population;
+        foundCountry.timezones = timezones;
+
+      }
+    },
+
+    deleteCountry: (state, action) => {
+          
+      const foundCountry = state.data.find( (coun) => coun.name.common === action.payload);
+          
+      if (foundCountry) {
+        state.data.splice( state.data.indexOf(foundCountry), 1);
+      }
+    },
 },
 });
-export const { loadCountries, newCountry } = CountriesSlice.actions;
+export const { loadCountries, newCountry, editCountry, deleteCountry } = CountriesSlice.actions;
 
 /* 
 "name": {

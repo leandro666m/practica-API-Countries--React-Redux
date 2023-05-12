@@ -19,3 +19,13 @@
 p{
     margin-bottom: 0px;
 }
+.edit-btn{
+color: rgb(57, 73, 0);
+font-size: 20px;
+margin: 5px;
+}
+.delete-btn{
+    color:rgb(119, 27, 27);
+    font-size: 20px;
+    margin: 5px;
+}
