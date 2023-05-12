@@ -26,9 +26,9 @@ export const CountriesSlice = createSlice({
     },
 
     editCountry: (state, action) => {
-      const { flags , name, maps, region, capital, population, timezones} = action.payload;
-        console.log( { flags , name, maps, region, capital, population, timezones} );
-      const foundCountry = state.data.find( (coun) => coun.name.common === name);
+      const { id, flags , name, maps, region, capital, population, timezones} = action.payload;
+       // console.log(  action.payload );
+      const foundCountry = state.data.find( (coun) => coun.name.common === id);
       
       if (foundCountry) {
         foundCountry.flags = flags;

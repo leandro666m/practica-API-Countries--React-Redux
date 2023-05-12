@@ -17,7 +17,7 @@ export default function Form() {
   const handleSubmit = (event) => {
         event.preventDefault();
     if (params.id) {
-      dispatch( editCountry( {...country, name:params.id} ) );
+      dispatch( editCountry( {...country, id:params.id} ) );
     } else {
      dispatch( newCountry( {...country} ) );
     }
@@ -36,7 +36,7 @@ export default function Form() {
 
           <div className="col-md-4">
             <label htmlFor="validationDefault01" className="form-label">Name</label>
-            <input type="text" className="form-control" id="validationDefault01" required name="name" onChange={handleChange} value={country.name.common}/>
+            <input type="text" className="form-control" id="validationDefault01" name="name" onChange={handleChange} value={country.name.common}/>
           </div>
           <div className="col-md-4">
             <label htmlFor="validationDefault02" className="form-label"> GoogleMaps URL </label>
